@@ -1,0 +1,14 @@
+*.class
+
+bin/
+target/
+
+.settings/
+.project
+.classpath
+.metadata/
+
+.vscode/
+
+.DS_Store
+Thumbs.db
