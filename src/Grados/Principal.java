@@ -4,7 +4,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		new Ventana("Fahrenheit-Celsius");
+		new Ventana("🌡 Conversor de Temperatura");
 
 	}
 
