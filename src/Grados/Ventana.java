@@ -6,11 +6,6 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridBagLayoutInfo;
-import java.awt.Insets;
-import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -154,6 +149,10 @@ public class Ventana extends JFrame implements ActionListener, KeyListener {
 		} else if (e.getSource() == borrarBtn) {
 
 			System.out.println("Btn Borrar");
+			textC.setText("");
+			textF.setText("");
+			textC.setEditable(true);
+			textF.setEditable(true);
 
 		} else if (e.getSource() == salirBtn) {
 
@@ -233,14 +232,12 @@ public class Ventana extends JFrame implements ActionListener, KeyListener {
 	public void keyReleased(KeyEvent e) {
 		
 		if (!textC.getText().isEmpty())
-			textF.setEnabled(false);
+			textF.setEditable(false);
 		else if (!textF.getText().isEmpty())
-			textC.setEnabled(false);
+			textC.setEditable(false);
 		else {
-			
-			textC.setEnabled(true);
-			textF.setEnabled(true);
-		
+			textF.setEditable(true);
+			textF.setEditable(true);
 		}
 		
 	}
