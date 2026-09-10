@@ -1,7 +1,7 @@
 <div align="center">
 
-    <img
-        src="./img/ventana-principal.png"
+<img
+        src="./src/img/ventana-principal.png"
         alt="Conversor de Temperaturas"
         width="500px"
     />
