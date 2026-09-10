@@ -65,7 +65,7 @@ Para ejecutar el proyecto es necesario contar con:
 ### Ejecutar el proyecto
 - Clonar el repositorio: <br>
   ```bash
-  git clone https://github.com/LaloSP-dev/Fahrenheit-Celsius.git
+  git clone https://github.com/LaloSP-dev/Conversor-de-Temperaturas.git
   ```
 - Abrir el proyecto en el IDE.
 - Ejecutar la clase que contiene el método main.
