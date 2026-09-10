@@ -62,8 +62,8 @@ public class Ventana extends JFrame implements ActionListener, KeyListener {
 
 		components();
 
-		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
 	}
 
 	public void components() {
@@ -137,8 +137,8 @@ public class Ventana extends JFrame implements ActionListener, KeyListener {
 
 		if (e.getSource() == calcularBtn) {
 
-			gradosC = textC.getText();
-			gradosF = textF.getText();
+			gradosC = textC.getText().trim();
+			gradosF = textF.getText().trim();
 
 			if (validarTextoGrados(gradosC, gradosF)) {
 				calcularGrados(gradosC, gradosF);
@@ -170,30 +170,25 @@ public class Ventana extends JFrame implements ActionListener, KeyListener {
 	public boolean validarTextoGrados(String gradosC, String gradosF) {
 
 		if (gradosC.isBlank() && gradosF.isBlank()) {
+	        labelError.setText("Campos vacíos");
+	        panelError.setVisible(true);
+	        return false;
+	    }
 
-			labelError.setText("Campos vacios");
-			panelError.setVisible(true);
-			return false;
+	    if (!gradosC.isBlank() && !isNumeric(gradosC)) {
+	        labelError.setText("Grados Celsius no válidos");
+	        panelError.setVisible(true);
+	        return false;
+	    }
 
-		}
+	    if (!gradosF.isBlank() && !isNumeric(gradosF)) {
+	        labelError.setText("Grados Fahrenheit no válidos");
+	        panelError.setVisible(true);
+	        return false;
+	    }
 
-		if (!isNumeric(gradosF) && !gradosF.isEmpty()) {
-
-			labelError.setText("Grados Fahrenheit no valido");
-			panelError.setVisible(true);
-			return false;
-
-		} else if (!isNumeric(gradosC) && !gradosC.isEmpty()) {
-
-			labelError.setText("Grados Celsius no valido");
-			panelError.setVisible(true);
-			return false;
-
-		}
-
-		panelError.setVisible(false);
-
-		return true;
+	    panelError.setVisible(false);
+	    return true;
 	}
 	
 	public void calcularGrados(String gradosC, String gradosF) {
