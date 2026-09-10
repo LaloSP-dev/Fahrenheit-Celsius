@@ -13,6 +13,8 @@ import java.awt.Insets;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -22,7 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class Ventana extends JFrame implements ActionListener {
+public class Ventana extends JFrame implements ActionListener, KeyListener {
 
 	private JLabel labelC;
 	private JLabel labelF;
@@ -131,6 +133,8 @@ public class Ventana extends JFrame implements ActionListener {
 		calcularBtn.addActionListener(this);
 		borrarBtn.addActionListener(this);
 		salirBtn.addActionListener(this);
+		textF.addKeyListener(this);
+		textC.addKeyListener(this);
 	}
 
 	@Override
@@ -212,4 +216,32 @@ public class Ventana extends JFrame implements ActionListener {
 		
 	}
 
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		
+		if (!textC.getText().isEmpty())
+			textF.setEnabled(false);
+		else if (!textF.getText().isEmpty())
+			textC.setEnabled(false);
+		else {
+			
+			textC.setEnabled(true);
+			textF.setEnabled(true);
+		
+		}
+		
+	}
 }
