@@ -236,7 +236,7 @@ public class Ventana extends JFrame implements ActionListener, KeyListener {
 		else if (!textF.getText().isEmpty())
 			textC.setEditable(false);
 		else {
-			textF.setEditable(true);
+			textC.setEditable(true);
 			textF.setEditable(true);
 		}
 		
